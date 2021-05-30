@@ -55,7 +55,6 @@ class _WebViewPage {
   }
 
   _parseUrl(String url) {
-    if (url?.isNotEmpty != null) {
       Uri uri = Uri.parse(url);
       debugPrint('PLAID uri: ' + uri.toString());
       Map<String, String> queryParams = uri.queryParameters;
@@ -63,15 +62,13 @@ class _WebViewPage {
       debugPrint('queryParams: ' + queryParams.toString());
       debugPrint('segments: ' + segments.toString());
       _processParams(queryParams, url);
-    }
   }
 
   _processParams(Map<String, String> queryParams, String url) async {
-    if (queryParams != null) {
       String eventName = queryParams['event_name'] ?? 'unknown';
       debugPrint("PLAID Event name: " + eventName);
 
-      if (eventName == 'EXIT' || (url.contains('/exit?') ?? false)) {
+      if (eventName == 'EXIT' || (url.contains('/exit?'))) {
         this._closeWebView();
       } else if (eventName == 'HANDOFF') {
         this._closeWebView();
@@ -86,7 +83,7 @@ class _WebViewPage {
           await this._fetchStripeToken(token, accountId);
         }
       }
-    }
+
   }
 
   _fetchStripeToken(String token, String accountId) async {
