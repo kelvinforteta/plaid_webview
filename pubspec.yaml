@@ -1,8 +1,8 @@
 name: plaid_webview
 description: A webview implementation of plaid. Plaid helps all companies build fintech solutions by making it easy, safe and reliable for people to connect their financial data to apps and services.
 version: 1.0.1
-#author: Kelvin Forteta
-homepage: https://github.com/KelvinForteta/plaid_webview
+#author: Izu Okoye
+homepage: https://github.com/izuokoye/plaid_webview
 
 environment:
   sdk: '>=2.12.0 <3.0.0'
